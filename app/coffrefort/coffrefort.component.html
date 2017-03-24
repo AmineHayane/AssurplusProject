@@ -1,0 +1,254 @@
+
+
+
+<div class="spacer">
+</div>
+
+<div class="ui icon header" (mouseenter)="JiggleOnHover()">
+
+  <i class="teal lock icon"> </i>
+
+   Mon coffre-fort 
+  
+</div>
+
+
+<div class="ui tabular menu">
+  <a class="item active">
+    Multimédia
+  </a>
+  <a class="item"> 
+    Électroménager 
+  </a>
+
+   <a class="item">
+    Mobilier
+   </a>
+
+    <a class="item">
+    Vêtements
+  </a>
+
+</div>
+
+
+  <div class="ui teal icon button" routerLink="/ajoutProduit" routerLinkActive="active">
+
+<i class=" add circle icon "> </i>
+Ajouter un objet
+</div>
+
+ <div class="ui four link doubling stackable special cards container">
+    
+     <div class="card" *ngFor="let bien of biens; let i = index">
+ 
+      <div class="blurring dimmable image">
+
+       <div class="ui inverted dimmer">
+           <div class="content">
+          <div class="center">
+            
+            <div class="ui buttons"> 
+
+            <div class="ui teal button" data-tooltip="Modifier">
+              
+              <i class="material-icons"> create </i>
+             
+              </div>
+
+              <div class="ui teal button" data-tooltip="Justificatifs">
+              
+              <i class="material-icons">insert_drive_file</i>
+             
+              </div>
+
+              <div class="ui teal button" data-tooltip="Supprimer" (click) = deleteObject(bien.id) (click)=deleteOnView(i)>
+              
+              <i class="material-icons">delete</i>
+             
+              </div>
+
+            </div>
+
+          </div>
+           </div>
+        </div> 
+
+      <img src="{{bien.imageurl}}">
+      
+  </div>
+
+
+  <div class="content">
+   
+    <a class="header" MaDirective>{{bien.description}}</a>
+    
+    <div class="meta">
+      
+    </div>
+
+    <div class="description">
+
+      <div class="ui left aligned animated list">
+
+        <div class="item">
+           <a class="eltlist"> <i class="material-icons">date_range</i>Date d'achat: {{bien.dateachat}} </a>
+        </div>
+
+        <div class="item">
+
+         <a class="eltlist"> <i class="material-icons">euro_symbol</i>Prix d'achat: {{bien.prixachat}} € </a>
+
+        </div>
+
+      </div>
+     
+   </div>
+
+
+  
+
+</div>
+
+   <div class="ui teal button">
+       <i class="material-icons">remove_red_eye</i>
+    </div>
+
+ </div>
+
+ </div>
+
+
+  <div class="ui four link doubling stackable special cards container">
+    
+     <div class="card" *ngFor="let post of posts">
+ 
+      <div class="blurring dimmable image">
+
+       <div class="ui inverted dimmer">
+           <div class="content">
+          <div class="center">
+            
+            <div class="ui buttons"> 
+
+            <div class="ui teal button" data-tooltip="Modifier">
+              
+              <i class="material-icons">create</i>
+             
+              </div>
+
+              <div class="ui teal button" data-tooltip="Justificatifs">
+              
+              <i class="material-icons">insert_drive_file</i>
+             
+              </div>
+
+              <div class="ui teal button" data-tooltip="Supprimer">
+              
+              <i class="material-icons md-18">delete</i>
+             
+              </div>
+
+            </div>
+
+          </div>
+           </div>
+        </div> 
+  </div>
+
+
+  <div class="content">
+   
+    <a class="header" MaDirective>{{post.id}}</a>
+    
+    <div class="meta">
+      
+    </div>
+
+    <div class="description">
+
+      <div class="ui left aligned animated list">
+
+        <div class="item">
+           <a class="eltlist"> <i class="material-icons">date_range</i></a>
+        </div>
+
+        <div class="item">
+
+         <a class="eltlist"> <i class="material-icons">euro_symbol</i></a>
+
+        </div>
+
+        <div class="item">
+             <a class="eltlist" > <i class="material-icons">show_chart</i></a>
+        </div>
+
+      </div>
+     
+   </div>
+
+
+  
+
+</div>
+
+   <div class="ui teal button">
+       <i class="material-icons">remove_red_eye</i>
+    </div>
+
+ </div>
+
+ </div>
+
+
+
+<div class="ui basic modal">
+  
+
+  <div class="content">
+    <p>Voulez-vous supprimer définitivement ce bien de votre coffre-fort ?</p>
+  </div>
+
+
+  <div class="actions">
+
+    <div class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>
+      Non
+    </div>
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>
+      Oui
+    </div>
+  </div>
+</div>
+
+
+<div class="ui page dimmer">
+  
+  
+  <div class="content">
+    <div class="center">
+
+      <div class="ui icon header">
+        <i class=" warning sign inverted icon"></i>
+      </div>
+
+      <p>Voulez-vous supprimer définitivement ce bien de votre coffre-fort ?</p>
+      
+
+    <div class="ui teal big button">
+      <i class="checkmark icon"></i>
+      Oui
+    </div>
+
+     <div class="ui cancel big  button">
+      <i class="remove icon"></i>
+      Non
+  
+  </div>
+      
+  
+      </div>
+  </div>
+</div>

@@ -1,0 +1,243 @@
+
+ <!--
+<md-sidenav-container>
+  
+
+  <md-sidenav mode="over"  #sidenav class="sidenav">
+ 
+  <div class="mycontent">
+  
+  <ul> 
+
+    <li> <button md-button> 
+      <i class="material-icons">dashboard</i>
+        Tableau de bord
+      </button> 
+    
+    </li>
+
+    <li> 
+      <button md-button  routerLink="/moncompte" routerLinkActive="active">
+      <i class="material-icons">account_circle </i>
+       Mon compte
+      </button> 
+    </li>
+
+    <li>   
+      <button md-button  routerLink="/coffrefort" routerLinkActive="active" >
+      <i class="material-icons">lock</i>
+        Mon coffre-fort
+      </button> 
+    </li>
+
+      <li>
+        <button md-button>
+        <i class="material-icons">power_settings_new</i>
+        Déconnexion 
+      </button>
+      </li>
+
+  </ul>
+  </div>
+
+  </md-sidenav>
+
+</md-sidenav-container>
+
+-->
+
+ <body (mouseover)="displayDimmer()"> 
+
+<div class="ui left vertical sidebar labeled icon menu">
+
+  <a class="item" routerLink="/board" routerLinkActive="active" (click)="closeSidenav()">
+    <i class="teal dashboard icon"></i>
+    Tableau de bord
+  </a>
+
+  <a class="item" routerLink="/moncompte" routerLinkActive="active" (click)="closeSidenav()">
+
+        <i class="teal user icon"></i>
+        Mon compte
+  </a>
+
+  <a class=" item" routerLink="/coffrefort" routerLinkActive="active" (click)="closeSidenav()">
+  <i class="teal lock icon"></i>
+       Mon coffre-fort 
+  </a>
+
+  <a class="item" (click)="closeSidenav()">
+
+   <i class="teal sticky note icon"></i>
+
+       Mes contrats  
+  </a>
+
+  <a class="item" (click)="closeSidenav()">
+
+   <i class="teal power icon"></i>
+
+       Déconnexion 
+  </a>
+
+</div>
+
+
+ <div class="pusher">
+
+   
+   
+   <div class="ui modal">
+ 
+
+  <div class="header">
+   Connexion
+  </div>
+    <div class="content">
+
+    <div class="description">
+
+  <div class="ui one column stackable center aligned page grid">
+
+<div class="column eight wide">
+
+<div class="ui container"> 
+
+<div class="ui form">
+
+  <div class="field">
+    <div class="ui left icon input">
+          <input type="text" placeholder= "Identifiant">
+          <i class="user icon"></i>
+    </div>
+
+  </div>
+
+  <div class=" field">
+ 
+ <div class="ui left icon input">
+          <input type="password" placeholder="Mot de passe">
+          <i class="lock icon"></i>
+  </div>
+  </div>
+
+  <div class="field">
+
+  <button class="ui big teal button"> Se connecter </button>
+
+  </div>
+
+
+</div>
+
+</div>
+
+
+</div></div>
+
+    </div>
+
+    </div>
+
+
+
+
+
+   </div>
+
+
+
+<div class="ui blurring segment">
+
+<div class="ui page dimmer">
+
+<div class="content">
+
+     
+  <div class="center">
+
+<div class="ui one column stackable center aligned page grid">
+
+<div class="column eight wide">
+
+<div class="ui container"> 
+
+<div class="ui form">
+
+  <div class="field">
+    <div class="ui left icon input">
+          <input type="text" placeholder= "Identifiant">
+          <i class="user icon"></i>
+    </div>
+
+  </div>
+
+  <div class=" field">
+ 
+ <div class="ui left icon input">
+          <input type="password" placeholder="Mot de passe">
+          <i class="lock icon"></i>
+  </div>
+  </div>
+
+  <div class="field">
+
+  <button class="ui big teal button"> Se connecter </button>
+
+  </div>
+
+
+</div>
+
+</div>
+
+
+</div></div>
+
+
+<div class="ui horizontal inverted divider">
+    Ou
+  </div>
+
+
+<div class="ui big teal labeled icon button" routerLink="/inscription" routerLinkActive="active" (click)="HideLoggingDimmer()">
+     
+      <i class="signup icon"></i>
+      S'inscrire
+    </div>
+
+      </div>
+</div>
+</div>
+    
+<div class="ui top fixed menu">
+
+  <a class="item" (click)="openSidenav()">  
+    
+      <i class="material-icons">menu</i>
+
+  </a>
+
+    <div class="spacer"></div>
+    
+     <a class="item" (click)="displayModal()">
+
+    <i class="ui circular large inverted teal user icon"></i> 
+
+  </a>
+
+
+</div>
+
+<md-progress-bar mode="indeterminate"></md-progress-bar>
+
+  <div class="routeroutlet">
+     <router-outlet></router-outlet>
+  </div>
+
+  </div>
+
+ </div>
+  
+</body>
+

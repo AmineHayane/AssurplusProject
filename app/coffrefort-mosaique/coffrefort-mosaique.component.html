@@ -1,0 +1,194 @@
+<md-toolbar>
+
+Coffre-fort
+
+ <span class="spacer"></span>
+
+
+  <button md-icon-button (click)="toggleMove()">
+      <i class="material-icons">search</i>
+  </button>
+
+ <md-input-container >
+        <input mdInput type="search" value="" [@focusInput]='state'>
+  </md-input-container>
+
+   
+</md-toolbar>
+
+<md-tab-group> 
+  
+  <md-tab label="Multimedia">
+     
+     <div class="actionscoffre">
+     
+     <button md-button (click)="addobjet()">
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+     
+    
+    <button md-button>
+   
+     <i class="material-icons">view_list</i>
+    </button>
+
+     <button md-button routerLink="/coffrefort" routerLinkActive="active">
+     <i class="material-icons">view_module</i>
+     </button>
+
+     </div>
+    
+
+<div class="ui big aligned divided animated list">
+
+
+  <div class="item" *ngFor="let objet of objets">
+
+
+     <div class="left floated content"> 
+
+    <div class="ui accordion">
+      
+    <div class="title active">
+
+      <a>
+
+        <img class="ui avatar image" src="{{objet.img}}">
+  
+            {{objet.description}} 
+     </a>
+
+    </div>
+  </div>
+
+     </div>
+    
+
+
+  <div class="right floated content">
+
+  
+  <button class="ui teal icon button">
+    
+        <i class="material-icons">create</i>
+        
+  </button>
+
+  <button class="ui teal icon button">
+
+    <i class="material-icons">insert_drive_file</i>
+      
+  </button>
+
+  <button class="ui teal icon button">
+
+      <i class="material-icons md-18">delete</i>
+
+  </button>
+  
+
+ </div>
+
+  </div>
+
+
+</div>
+  
+    </md-tab>
+
+      <md-tab label="Electroménager">
+     
+     <div class="actionscoffre">
+     
+     <button md-button routerLink="/coffrefort/nouvelobjet" routerLinkActive="active">
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+     
+     <button md-button>
+     <i class="material-icons">view_list</i>
+     </button>
+    <button md-button>
+     <i class="material-icons">view_module</i>
+    </button>
+
+     </div>
+
+      <md-grid-list cols="3">
+
+        <md-grid-tile *ngFor="let objet of objets; let i = index">
+
+          <img src="{{objet.img }}">
+         <p class="description">{{ objet.description }}</p>
+         <p> Prix neuf : {{objet.prixneuf}} </p>
+         <p> Date d'achat: {{objet.achat}} </p>
+         <p> Evalué à : {{objet.evaluation}} </p>
+
+        <button md-button (click)="modifier(i)">
+            <i class="material-icons">create</i> Modifier
+        </button>
+
+        <button md-button (click)="supprimer(i)">
+             <i class="material-icons md-18">delete</i> Supprimer 
+        </button>
+
+        <button md-button (click)="modifier(i)">
+           <i class="material-icons">insert_drive_file</i> Justificatifs
+        </button>
+
+        </md-grid-tile>
+
+      </md-grid-list>
+
+     </md-tab>
+
+     
+     
+      <md-tab label="Mobilier">
+    
+      <div class="actionscoffre">
+     
+     <button md-button routerLink="/coffrefort/nouvelobjet" routerLinkActive="active">
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+     
+     <button md-button>
+     <i class="material-icons">view_list</i>
+     </button>
+    <button md-button>
+     <i class="material-icons">view_module</i>
+    </button>
+
+     </div>
+
+
+      <md-grid-list cols="3">
+
+        <md-grid-tile *ngFor="let objet of objets; let i = index">
+
+    
+         <p class="description">{{ objet.description }}</p>
+         <p> Prix neuf : {{objet.prixneuf}} </p>
+         <p> Date d'achat: {{objet.achat}} </p>
+         <p> Evalué à : {{objet.evaluation}} </p>
+
+        <button md-button (click)="modifier(i)">
+            <i class="material-icons">create</i> Modifier
+        </button>
+
+        <button md-button (click)="supprimer(i)">
+             <i class="material-icons md-18">delete</i> Supprimer 
+        </button>
+
+        <button md-button (click)="modifier(i)">
+           <i class="material-icons">insert_drive_file</i> Justificatifs
+        </button>
+
+        </md-grid-tile>
+
+      </md-grid-list>
+      
+      
+     </md-tab>
+
+
+ </md-tab-group>

@@ -1,0 +1,274 @@
+
+<div class="spacer">
+</div>
+
+
+<div class="ui ordered fluid tablet stackable steps">
+<div class="active step">
+    <div class="content">
+      <div class="title">Votre bien</div>
+    </div>
+</div>
+
+<div class="step">
+    <div class="content">
+      <div class="title"> Vos justificatifs </div>
+    </div>
+</div>
+
+<div class="step">
+    <div class="content">
+      <div class="title"> Validation </div>
+    </div>
+</div>
+
+</div>
+
+   <h2> Choisissez une méthode de recherche </h2>
+   
+<div class="ui link doubling stackable centered cards container">
+
+  <div class="card" (click)=changeChoixPhoto()>
+
+    <div class="content">
+
+       <i class=" huge teal photo icon "></i>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <div class="content">
+     <i class=" huge teal barcode  icon "></i>
+    </div>
+  
+  </div>
+
+  <div class="card">
+
+    <div class="content">
+     <i class=" huge teal search  icon "></i>
+    </div>
+
+  </div>
+
+  </div>
+<div class="espaceur">
+</div>
+
+<h2> Informations complémentaires </h2>
+
+<div class="ui column stackable center aligned page grid">
+
+<div class="column six wide">
+
+<div class="container">
+
+<form> 
+
+<div class="ui form">
+
+    <div class="field">
+
+     <div class="ui toggle checkbox">
+      <input type="checkbox" checked="checked"> 
+      <label> Je possède une preuve d'achat </label>
+    </div>
+
+  </div>
+
+  <div class="sectionDisplay" *ngIf="visibility">
+
+
+  <div class="section"> 
+
+<div class="field">
+
+    <div class="ui left icon input">
+
+          <input type="text" placeholder= "Description du bien"
+            required
+            name="description"
+            [(ngModel)]="myObjet.description"
+
+            >
+
+          <i class="info icon"></i>
+    </div>
+
+
+  
+    </div>
+
+</div>
+
+<div class="section">
+
+  <div class="field">
+
+    <div class="ui left icon input">
+
+          <input type="date" placeholder= "Date d'achat"
+            required
+            name="dateAchatBien"
+            [(ngModel)]="myObjet.dateachat"
+
+            >
+
+          <i class="calendar icon"></i>
+    </div>
+
+    </div>
+</div>
+
+  </div>
+
+
+  <div class="sectionDisplay"  *ngIf="visibility">
+
+  <div class="field" >
+  
+     <div class="ui left icon input">
+
+          <input type="number" placeholder= "Prix d'achat"
+            required
+            [(ngModel)]="myObjet.prixachat"
+            name="prixAchatBien">
+
+          <i class="euro icon"></i>
+          
+    </div>
+    
+    </div>
+
+  </div>
+
+   <div class="sectionDisplay"  *ngIf="complete">
+
+  <div class="field"> 
+    <div class="ui positive  message" >
+
+   Votre bien est estimé à  {{myObjet.valeur}} €
+  
+  </div>
+  </div>
+
+  </div>
+
+
+   <div class="sectionDisplay"  *ngIf="neuf && !complete"> 
+
+  <div class="field"> 
+    <div class="ui positive  message" >
+
+   Votre bien est estimé au prix d'achat:{{myObjet.valeur}} €
+  
+  </div>
+  </div>
+
+  </div>
+<!--
+<div class="section"> 
+
+    <div class="field">
+  
+     <div class="ui selection dropdown" (mouseover)="dropDown()">
+
+          <input type="hidden"  required 
+          
+          name="etatBien"
+          
+          [(ngModel)]="etatBien"
+          
+          >
+
+          <i class="dropdown icon"></i>
+
+          <div class="default text">Etat de votre bien</div>
+
+          <div class="menu">
+
+              <div class="item">Neuf</div>
+              <div class="item">Très bon état</div>
+               <div class="item">Bon état</div>
+                <div class="item"> Etat correct </div>
+                 <div class="item"> Mauvais état </div>
+          </div>
+
+    </div>
+    
+    </div>
+
+</div>
+-->
+
+
+<div class="section" *ngIf="choixPhoto"> 
+
+<div class="field">
+
+    <label for="file" class="ui right labeled icon button">
+
+    Ajoutez une photo de votre bien 
+
+    <i class=" download icon"></i>
+     
+    </label>
+
+      <input type="file" id="file" placeholder= "Photo du produit"
+            required
+            name="urlimage"
+            [(ngModel)]="myObjet.imageurl" style="display:none">
+              
+     </div>
+</div>
+
+
+<div class="section"> 
+
+  <div class="field">
+
+      <button class="big ui teal animated fade button" (click)=addobjet()  >
+
+
+     <div class="visible content">
+       
+      Suivant 
+       
+      </div>
+
+      <div class="hidden content">
+
+    <i class="chevron right icon "></i>
+     
+       
+      </div>
+   
+  </button>
+
+
+
+  </div>
+
+</div>
+
+
+
+    
+  </div>
+  
+</form>
+  
+  
+
+</div>
+
+</div>
+</div>
+
+
+
+
+

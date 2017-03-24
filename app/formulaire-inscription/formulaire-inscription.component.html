@@ -1,0 +1,129 @@
+
+
+
+<div class="spacer">
+</div>
+
+<div class="ui header">
+
+   Créer un compte
+  
+</div>
+
+<div class="ui positive  message" *ngIf="submitted">
+
+  <div class="header">
+    Votre inscription a bien été prise en compte, un mail de confirmation vient de vous être envoyé à l'adresse suivante : {{email}}
+  </div>
+
+  
+</div>
+
+
+<div class="ui column stackable center aligned page grid" *ngIf="!submitted">
+
+<div class="column eight wide">
+
+<div class="container">
+
+<form (ngSubmit)="onSubmit(form.value)" #form="ngForm"> 
+
+<div class="ui form">
+
+  <div class="field">
+
+    <div class="ui left icon input">
+          
+          <input type="email" placeholder= "Email"
+            required
+            name="ClientEmail"
+            [(ngModel)]="email"
+
+            >
+
+          <i class="at icon"></i>
+    </div>
+
+  </div>
+
+  <div class=" field">
+ 
+ <div class="ui left icon input">
+
+          <input type="password" placeholder="Mot de passe"  
+          required
+          minlength="8"
+          name="ClientMotDePasse"
+          [(ngModel)]="password"
+          
+          #mdp='ngModel'
+
+        
+          >
+
+          <i class="lock icon"></i>
+  </div>
+
+  </div>
+
+
+   <div class=" field">
+  <div class="ui left icon input">
+          <input type="password" placeholder="Vérification du mot de passe"
+
+           name="MotDePasseCheck"
+           [(ngModel)]="passwordbis"
+           #mdpbis='ngModel' 
+          >
+
+          <i class="lock icon"></i>
+  </div>
+
+    
+
+    <div class="ui negative message" *ngIf="samePasswords" >
+
+  <div class="header">
+
+     Les deux mots de passe ne correspondent pas ! 
+  </div>
+    
+    </div>
+
+     <div class="ui negative message" *ngIf="mdp.invalid && mdp.touched">
+      
+  <div class="header">
+     Votre mot de passe doit contenir au moins 8 caractères
+  </div>
+    
+    </div>
+
+   </div>
+
+   <div class="left field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label> J'accepte les conditions générales d'Assurplus.com</label>
+    </div>
+  </div>
+
+  <div class="field">
+
+  <button class="ui big teal button" type="submit" (click)="comparePasswords()"> S'inscrire </button>
+
+  </div>
+
+</div>
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+ 
