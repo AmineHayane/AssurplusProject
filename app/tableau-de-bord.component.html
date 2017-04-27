@@ -1,0 +1,185 @@
+
+
+<div class="spacer">
+</div>
+
+
+  <div class="ui three doubling stackable cards container">
+
+    <div class="card" >
+
+        <div class="content"> 
+
+          <div class="left floated header">
+            Mon patrimoine 
+          </div>
+
+            <div class="description">
+            
+              <div class="ui statistics">
+
+                <div class="ui grey statistic">
+
+                   <div class="value">
+
+                        Ici le patrimoine ZAB
+
+                       <i class=" grey euro icon"></i> 
+
+                      </div>
+
+                      <div class=" label"> 
+
+                        Patrimoine total
+                        
+                      </div>
+
+                 </div>
+
+                 <div class=" ui teal statistic">
+
+                   <div class="value">
+
+                      1000 
+
+                       <i class="teal euro icon"></i> 
+
+                      </div>
+
+                      <div class=" label"> 
+
+                        Patrimoine assuré 
+                        
+                      </div>
+
+                 </div>
+
+              </div>
+     
+           </div>
+
+
+          
+        </div>
+
+
+    </div>
+
+    <div class="card">
+
+      <div class="content">
+
+          <div class="left floated header">
+            Mes contrats en cours  
+          </div>
+
+          
+        </div>
+
+
+    </div>
+
+     <div class="card">
+
+       <div class="content">
+
+
+          <div class="left floated header">
+            Mes prochains prélèvements
+          </div>
+
+        </div>
+
+    </div>
+
+     <div class="card">
+
+       <div class="content">
+
+          <div class="left floated header">
+            Evolution de mon patrimoine   
+          </div>
+            
+            <canvas baseChart width="200" height="200"
+
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                chartType="line"
+      
+          
+            > </canvas>
+
+          
+        </div>
+
+    </div>
+
+     <div class="card">
+
+       <div class="content">
+
+          <div class="left floated header">
+            Analyse de mon patrimoine   
+          </div>
+
+          <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          chartType="pie"
+          
+          ></canvas>
+
+          
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+       <div class="content">
+
+         <div class="left floated header">
+          
+              Mes ajouts récents  
+
+          </div>
+
+        </div>
+
+    </div>
+
+     <div class="card">
+
+       <div class="content">
+
+         <div class="left floated header">
+          
+          Documents / contrats 
+
+          </div>
+          
+        </div>
+
+    </div>
+
+
+     <div class="card">
+        
+        <div class="content">
+
+          
+        </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+  
