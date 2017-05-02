@@ -1,0 +1,4 @@
+sequelize model:create --name Habitation --attributes HabitationPrincipal:boolean,HabitationSurface:integer,HabitationRoomNumber:integer,HabitationSecurityLevel:integer,HabitationFloor:integer,HabitationDoorNumber:integer,HabitationRoommate:boolean,HabitationRoommateNumber:integer
+sequelize model:create --name SupportingDocument --attributes SupportingDocumentDepositDate:dateonly,SupportingDocumentType:string,SupportingDocumentAttachmentUrl:integer
+sequelize model:create --name RentingBail --attributes AdministrativeDocumentRentingBail:string
+sequelize model:create --name Insurance --attributes InsuranceName:string,InsuranceJoiningDate:dateonly,InsuranceLogin:string,InsurancePassword:string
